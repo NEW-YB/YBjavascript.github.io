@@ -1,0 +1,38 @@
+body,h3,h1,dl,dd,p{
+	margin: 0;
+}
+input{
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: #FF4400;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img{
+	border: none;
+	vertical-align: top;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.bl{
+	display: block;
+}
+.inbl{
+	display: inline-block;
+}

@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+.desk {
+  width: 100%;
+  height: 100%;
+  background: url(../img/desk.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.appList {
+  padding-top: 0.3125rem;
+}
+.appList li {
+  margin: 0 0.46875rem;
+  width: 1.5625rem;
+}
+.appList li a {
+  border-radius: 0.3125rem 0.3125rem;
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+.appList li span {
+  text-align: center;
+  width: 1.5625rem;
+  font-size: 0.3125rem;
+  line-height: 0.46875rem;
+}
+.xuebi {
+  background-image: url(../img/xuebi.jpg);
+  background-repeat: no-repeat;
+  background-size: 19.875rem 47.78125rem;
+}
+.anta {
+  background: url(../img/anta.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.tmall {
+  background: url(../img/tmall.png) no-repeat;
+  background-size: 100% 100%;
+}
+.train {
+  background-position: -15.3125rem -19.0625rem;
+}
+.PT {
+  background: url(../img/pintu.jpg) no-repeat;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,323 @@
+@import url("media.css");
+.banner{
+	margin-top: 50px;
+	width: 100%;
+	height: 159px;
+	background: url(../img/background.png) repeat-x;
+	padding-top: 41px;
+}
+.bn-center{
+	width: 420px;
+	height: 116px;
+	margin: 0 auto ;
+}
+.day{
+	width: 93px;
+	height: 40px;
+	border-right: 1px solid #385b72;
+}
+.bigtext{
+	font-size: 36px;
+	line-height: 40px;
+	color: #04dbce;
+}
+.smalltext{
+	color: #729cb7;
+	line-height: 14px;
+}
+.time{
+	padding-left: 14px;
+}
+.miao{
+	border-right: none;
+}
+.bn-center-mid{
+	height: 46px;
+	color: #6993ae;
+	line-height: 34px;
+	text-indent: 64px;
+}
+.bcdown-text{
+	width: 120px;
+	height: 30px;
+	background-color: #00b4de;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 81px;
+}
+.bcdown-um{
+	width: 120px;
+	height: 30px;
+	background-color: #486d7f;
+	color: #607e8f;
+	text-align: center;
+	line-height: 30px;
+}
+.bcdown-um:hover{
+	color: #FFFFFF;
+	background-color: #00b4de;
+}
+.banner-foot{
+	height: 50px;
+	padding-top: 10px;
+	background-color: #f7f8f8;
+}
+.hangye{
+	width: 124px;
+	height: 39px;
+	border: 1px solid #d9dada;
+	border-bottom: none; 
+	text-align: center;
+	line-height: 39px;
+	background-color: #edeeee;
+}
+.hangye span{
+	color: #535353;
+}
+.hangye-more{
+	margin-left: 6px;
+	vertical-align: middle;
+}
+.yan{
+	width: 104px;
+}
+.newhangye{
+	border: 1px solid #f7f8f8;
+	border-bottom: none; 
+	background-color: #f7f8f8;
+}
+.tuijian{
+	margin-right: 6px;
+}
+.bn-foot-right{
+	width: 592px;
+	height: 40px;
+	margin-left: 30px;
+	line-height: 40px;
+	color: #929292;
+	position: relative;
+}
+.tongzhi{
+	vertical-align: middle;
+	margin-right: 18px;
+}
+.bn-foot-right a{
+	color: #1f8902;
+}
+.shang,.xia{
+	width: 7px;
+	height: 4px;
+	position: absolute;
+}
+.shang{
+	right: 0;
+	top: 12px;
+}
+.xia{
+	right: 0;
+	top: 26px;
+}
+.content{
+	background-color: #f1f1f1;
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+.male{
+	margin-left: 20px;
+}
+.top-list{
+	margin-bottom: 46px;
+	background-color: #ffffff;
+	width: 280px;
+}
+.newtop{
+	width: 580px;
+}
+.tlist-one{
+	width: 100%;
+	height: 30px;
+	padding-top: 15px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.tlist-one a{
+	color: #bfbfd3;
+}
+.guankan{
+	margin-left: 20px;
+	margin-right: 14px;
+}
+.kan{
+	margin-right: 8px;
+}
+.pinglun{
+	margin-right: 14px;
+}
+.lun{
+	margin-right: 10px;
+}
+.cang{
+	margin-right: 12px;
+}
+.author{
+	padding: 11px 20px 0;
+	width: 240px;
+	height: 33px;
+}
+.shixin{
+	line-height: 24px;
+	margin-left: 18px;
+	color: #c0c0c0;
+}
+.yuanchuang{
+	margin-left: 6px;
+}
+.yema{
+	width: 36px;
+	height: 36px;
+	background-color: #ffffff;
+	text-align: center;
+	line-height: 36px;
+	color: #a9a9a9;
+	margin-right: 5px;
+}
+.jihuo{
+	color: #FFFFFF;
+	background-color: #70ca10;
+}
+.yema:hover{
+	color: #FFFFFF;
+	background-color: #70ca10;
+}
+.nobgr{
+	background-color: #f1f1f1;
+}
+.recommend{
+	margin-top: 40px;
+}
+.recommend-list{
+	width: 580px;
+	height: 300px;
+	background-color: #ffffff;
+	margin-bottom: 40px;
+}
+.recommend-head{
+	height: 60px;
+	border-bottom: 1px solid #f0f1f1;
+}
+.recommend-title{
+	width: 462px;
+	border-right: 1px solid #f0f1f1;
+	height: 60px;
+	font-size: 18px;
+	line-height: 60px;
+	font-weight: normal;
+	padding-left: 18px;
+}
+.recommend-more{
+	width: 99px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	color: #7e7e7e;
+}
+.tj{
+	margin-top: 20px;
+}
+.tj-list{
+	margin-left: 20px;
+	width: 250px;
+	margin-bottom: 24px;
+}
+.tj-author{
+	height: 46px;
+	width: 185px;
+}
+.name{
+	font-size: 14px;
+	line-height: 26px;
+	color: #696969;
+}
+.tj-author span{
+	color: #aaaaaa;
+	line-height: 16px;
+}
+.ml{
+	margin-left: 20px;
+}
+.newwidth{
+	width: 320px;
+}
+.last{
+	width: 70px;
+	height: 60px;
+	border-right: 1px solid #f0f1f1;
+	text-align: center;
+	font-size: 24px;
+	line-height: 60px;
+	color: #7e7e7e;
+}
+.recommend-content{
+	padding-top: 20px;
+}
+.recommend-pic{
+	margin-left: 20px;
+}
+.recommend-text{
+	margin-left: 20px;
+	width: 230px;
+}
+.qiye-one{
+	line-height: 26px;
+	height: 26px;
+	margin-top: 12px;
+}
+.qiye{
+	color: #515050;
+	font-size: 16px;
+}
+.qiye-two{
+	color: #bfb3cb;
+	line-height: 20px;
+}
+.qiye-three{
+	line-height: 25px;
+	color: #7d7d7d;
+	margin-top: 11px;
+}
+.recommend-foot{
+	background-color: #ffffff;
+}
+.company-head{
+	height: 60px;
+	border-bottom: 1px solid #f0f1f1;
+}
+.company-title{ 
+	height: 60px;
+	font-size: 18px;
+	line-height: 60px;
+	font-weight: normal;
+	text-indent: 18px;
+}
+.qq{
+	border-left: 1px solid #F0F1F1;
+	width: 210px;
+}
+.company{
+	margin-top: 31px;
+	margin-bottom: 25px;
+}
+.company-list{
+	margin-left: 20px;
+}
+.total-company{
+	width: 125px;
+	text-align: center;
+}
+.company-name{
+	line-height: 46px;
+	color: #5a5a5a;
+}
+.company-name span{
+	color: #c9b4b4;
+}

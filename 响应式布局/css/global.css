@@ -1,0 +1,112 @@
+.box{
+	width: 100%;
+	font: 12px Arial,"微软雅黑";
+}
+.head{
+	height: 50px;
+	background-color: #323436;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.jz{
+	width: 1180px;
+	margin: 0 auto;
+}
+.logo-text{
+	width: 132px;
+	height: 0;
+	padding-top: 42px;
+	background: url(../img/logo.png) no-repeat;
+	overflow: hidden;
+}
+.head-link{
+	margin-left: 20px;
+}
+.hlink-text{
+	line-height: 50px;
+	color: #8c8c8c;
+	padding: 0 20px;
+	position: relative;
+}
+.yincang{
+	background-color: #454648;
+	display: none;
+}
+.yincang img{
+	vertical-align: middle;
+}
+.head-more{
+	width: 7px;
+	height: 4px;
+	position: absolute;
+	top: 24px;
+	left: 54px;
+}
+.hlink-text:hover{
+	background-color: #454648;
+    color: #fff;
+}
+.head-right{
+	width: 182px;
+	height: 32px;
+	margin-top: 10px;
+	position: relative;
+}
+.login{
+	width: 70px;
+	line-height: 32px;
+	background-color: #505050;
+	text-align: center;
+	color: #acacac;
+	margin-left: 42px;
+}
+.regist{
+	background: #6BC30D;
+    color: #fff;
+    width: 70px;
+	line-height: 32px;
+	text-align: center;
+}
+.head-search{
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	left: 0;
+	top: 8px;
+}
+.foot{
+	background-color: #222324;
+}
+.jzfoot{
+	height: 100px;
+}
+.relative{
+	margin-top: 22px;
+}
+.guanyu{
+	line-height: 16px;
+	height: 18px;
+	color: #cecece;
+	margin-right: 40px;
+}
+.qun{
+	line-height: 16px;
+	height: 18px;
+	color: #8e8e6b;
+	margin-right: 20px;
+}
+.yanzheng{
+	margin-top: 19px;
+}
+.banquan{
+	width: 100%;
+	color: #8e8e8e;
+	line-height: 16px;
+	margin-top: 14px;
+}
+.like{
+	color: #62ca18;
+}

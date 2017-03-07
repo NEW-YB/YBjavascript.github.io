@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="pintu_css/index.css"/>
+		<script>
+			var dpr = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale='+dpr+',minimum-scale='+dpr+',maximum-scale='+dpr+'" />')
+			var fz = document.documentElement.clientWidth / 10;
+			document.getElementsByTagName('html')[0].style.fontSize = fz + 'px';
+		</script>
+	</head>
+	<body>
+		<div class="content clearfix">
+			<section class="level fl">
+				<div class="h clearfix">
+					<h1 class="title fl">智能拼图</h1>
+				</div>
+				<div class="choose">
+					<ul class="levelList clearfix">
+						<li class="fl"><img src="pintu_img/desk.jpg"/></li>
+						<li class="fl">111</li>
+						<li class="fl">111</li>
+						<li class="fl">111</li>
+					</ul>
+					<div class="dialog">
+						<div class="h clearfix">
+							<a href="javascript:;" class="fl back diffBack">返回</a>
+							<h2 class="smallTitle fl">请选择难度等级</h2>
+						</div>
+						<ul class="diffLevel">
+							<li>简单</li>
+							<li>普通</li>
+							<li>困难</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="game fl">
+				<div class="h clearfix">
+					<a href="javascript:;" class="fl back pintuBack">返回</a>
+					<h2 class="smallTitle fl">智能拼图</h2>
+					<a href="javascript:;" class="refresh fr"></a>
+				</div>
+				<div class="gameTip clearfix">
+					<span class="gameStart fl">点击开始→切换查看大图</span>
+					<span class="onoff fr"></span>
+				</div>
+				<table id="tab">
+					<tbody>
+						<tr>
+							<td><div>1</div></td>
+							<td><div>2</div></td>
+							<td><div>3</div></td>
+						</tr>
+						<tr>
+							<td><div>4</div></td>
+							<td><div>5</div></td>
+							<td><div>6</div></td>
+						</tr>
+						<tr>
+							<td><div>7</div></td>
+							<td><div>8</div></td>
+							<td><div>0</div></td>
+						</tr>
+					</tbody>	
+				</table>
+			</section>
+		</div>
+		
+		
+		
+		
+		
+		
+		<!--<button id="start">开始游戏</button>
+		<table id="tab">
+			<tbody>-->
+				<!--<tr>
+					<td><div>1</div></td>
+					<td><div>2</div></td>
+					<td><div>3</div></td>
+				</tr>
+				<tr>
+					<td><div>4</div></td>
+					<td><div>5</div></td>
+					<td><div>6</div></td>
+				</tr>
+				<tr>
+					<td><div>7</div></td>
+					<td><div>8</div></td>
+					<td><div>0</div></td>
+				</tr>-->
+			<!--</tbody>	
+		</table>
+		<input type="button" id="reStart" value="重新开始" style="display: none;" />
+		<input type="button" id="last" value="上一关" style="display: none;" />
+		<input type="button" id="next" value="下一关" style="display: none;" />-->
+		
+		<script src="pintu_js/index.js"></script>
+	</body>
+</html>

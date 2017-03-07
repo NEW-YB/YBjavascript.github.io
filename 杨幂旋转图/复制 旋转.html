@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 900px;
+				height: 320px;
+				background: gray;
+				position: relative;
+			}
+			img{
+				width: 200px;
+				height: 125px;
+				vertical-align: top;
+				border: 3px solid white;
+				position:absolute;
+				top: 100px;
+			    /*top:-1000px;
+			    left:-1000px;*/
+			    border:3px solid white;
+			    cursor:pointer;
+			    transition: 2s;
+			}
+			img:nth-of-type(2){
+				top: 30px;
+				width: 400px;
+				height: 250px;
+			}
+			img:nth-of-type(4){
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/mimi-0.jpg"/>
+			<img src="img/mimi-1.jpg"/>
+			<img src="img/mimi-2.jpg"/>
+			<img src="img/mimi-3.jpg"/>
+			<script>
+				var imgs=document.getElementsByTagName("img");
+				var arr=["img/mimi-0.jpg","img/mimi-1.jpg","img/mimi-2.jpg","img/mimi-3.jpg"]
+				imgs[0].style.left="20px";
+				imgs[1].style.left="220px";
+				imgs[2].style.left="623px";
+				imgs[3].style.left="320px";
+				imgs[2].onclick=function(){
+					
+					imgs[2].style.left="220px";
+					imgs[2].style.top="30px";
+					imgs[2].style.width="400px";
+					imgs[2].style.height="250px";
+					imgs[1].style.left="20px";
+					imgs[1].style.top="100px";
+					imgs[1].style.width="200px";
+					imgs[1].style.height="125px";
+					imgs[0].style.left="320px";
+					imgs[0].style.opacity="0";
+					imgs[3].style.left="623px";
+					imgs[3].style.opacity="1";
+					imgs[0].src=arr[1];
+					imgs[1].src=arr[2];
+					imgs[2].src=arr[3];
+					imgs[3].src=arr[0];
+				}
+				function move (obj,object1,duration,fn) {
+			    	var startTime = new Date();
+			    	var d = duration;
+			    	var j = {};
+			    	for( var a in object1){
+			    		j[a] = {};
+			    		j[a].b = parseFloat(getComputedStyle(obj)[a]);
+			    		j[a].c = object1[a] - j[a].b; 
+			    	}
+			    	console.log( j );
+			    	obj.timer = setInterval(function(){
+			    		
+			    		var t = new Date() - startTime;
+			    		if(t>=d){
+			    			t = d;
+			    		}
+			    		for(var a in j){
+			    			var c = j[a].c;
+			    			var b = j[a].b;
+							var v = c/d*t+b;
+			    			if(a == "opacity"){
+			    				obj.style[a] = v ;
+			    			}else{
+			    				obj.style[a] = v + "px";
+			    			}
+			    		}
+			    		if(t==d){
+			    			clearInterval(obj.timer);
+			    			fn&&fn();
+			    		}
+			    	},16)
+			    }
+			</script>
+		</div>
+	</body>
+</html>
