@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			li{
+				list-style: none;
+			}
+			.red{
+				background: red;
+			}
+			.blue{
+				background: blue;
+			}
+			.yellow{
+				background: yellow;
+			}
+			.pink{
+				background: pink;
+			}
+			ul{
+				display: none;
+			}
+		</style>
+		<script>
+			/*
+				第六天：
+					1.模拟单选
+
+					2.模拟多选
+
+			*/
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<h3>我的好友</h3>
+		<ul id="list">
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+		<h3>我的亲人</h3>
+		<ul>
+			<li>2</li>
+			<li>2</li>
+			<li>2</li>
+			<li>2</li>
+		</ul>
+		<h3>我的同学</h3>
+		<ul>
+			<li>3</li>
+			<li>3</li>
+			<li>3</li>
+			<li>3</li>
+		</ul>
+		<script>
+			
+			var h3 = document.getElementsByTagName("h3");
+			var allUl = document.getElementsByTagName("ul");
+			var allLi = document.getElementsByTagName("li");
+
+			//需要记录每一个ul显示或隐藏的状态,通过元素h3来记录
+
+			for( var i = 0; i < h3.length; i++ ){
+				h3[i].index = i;
+				h3[i].status = "none";  //自定义属性，目的是用来记录对用ul的状态，初始状态都为“none”
+				h3[i].onclick = function (){
+					//然对应ul出现
+					for( var j = 0; j < h3.length; j++ ){
+						h3[j].className = "";
+					}
+					if(this.status === "none"){
+						allUl[this.index].style.display = "block";
+						this.status = "block";
+						this.className = "red";
+					}else{
+						allUl[this.index].style.display = "none";
+						this.status = "none";
+						this.className = "blue";
+					}
+					
+				};
+			}
+
+
+			for( var j = 0; j < allLi.length; j++ ){
+				allLi[j].isClick = "unClick";
+				allLi[j].innerHTML = allLi[j].isClick;
+				allLi[j].onmouseover = function (){
+					if(this.isClick === "unClick"){
+						this.className = "yellow";
+					}
+						
+				};
+				allLi[j].onmouseout = function (){
+					if(this.isClick === "unClick"){
+						this.className = "";
+					}
+						
+				};
+				allLi[j].onclick = function (){
+
+					for( var i = 0; i < allLi.length; i++ ){
+						allLi[i].className = "";
+						allLi[i].isClick = "unClick";
+						allLi[i].innerHTML = this.isClick;	
+					}
+
+					this.className = "pink";
+					this.isClick = "click";
+
+					this.innerHTML = this.isClick;	
+				};
+			}	
+
+		</script>
+	</body>
+</html>

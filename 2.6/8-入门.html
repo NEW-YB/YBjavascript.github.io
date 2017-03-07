@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				第六天：
+					1.模拟单选
+
+					2.模拟多选
+
+			*/
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<input id="a" type="button" value="按钮1" />
+		<input id="b" type="button" value="按钮2" />
+		<input id="c" type="button" value="按钮3" />
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<div></div>
+		<script>
+		var allLi = document.getElementsByTagName("li");
+		var allInput = document.getElementsByTagName("input");
+
+		//在循环的时候，手动自己自定义个一个属性，记录下标
+		for( var i = 0; i < allInput.length; i++ ){
+			allInput[i].index = i;
+			allInput[i].onclick = function (){
+				//点击的是哪一个input
+
+				/*if( this.id === "a" ){
+					allLi[0].style.background = "yellow";
+				}
+				if( this.id === "b" ){
+					allLi[1].style.background = "yellow";
+				}*/
+
+
+
+
+				for( var i = 0; i < allInput.length; i++ ){
+					allInput[i].style.background = "";
+					allLi[i].style.background = "";
+				}
+
+				this.style.background = "red";	
+				allLi[this.index].style.background = "yellow";
+			};
+		}	
+
+
+		</script>
+	</body>
+</html>

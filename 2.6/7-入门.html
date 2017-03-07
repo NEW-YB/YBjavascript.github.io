@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				第六天：
+					1.模拟单选
+
+					2.模拟多选
+
+			*/
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+		<div></div>
+		<script>
+		var allLi = document.getElementsByTagName("li");
+		//模拟单选
+		/*for( var i = 0; i < allLi.length; i++ ){
+			allLi[i].onclick = function (){
+
+				for( var i = 0; i <allLi.length ; i++ ){
+					allLi[i].style.background = '';
+				}
+
+				this.style.background = "red";	
+			};
+		}*/
+
+		//模拟多选
+
+		//记录元素选中的状态
+
+		var status1 = "noRed";
+		var status2 = "noRed";
+		var status3 = "noRed";
+
+		//给每一个li单独添加一个状态
+
+		for( var i = 0; i < allLi.length; i++ ){
+			allLi[i].index = "abc"+i;
+			allLi[i].status = "noRed";  //自定义属性
+			allLi[i].onclick = function (){
+				//点击的时候，判断出点击的是哪一个li
+
+				console.dir( this.index === "abc0" );
+				console.dir( this.index === "abc1" );
+				console.dir( this.index === "abc2" );
+
+				console.log( this.status );
+
+				if(status === "noRed"){
+					this.style.background = "red";
+					status = "red";
+				}else{
+					this.style.background = "";
+					status = "noRed";
+				}
+					
+			};
+		}
+
+		</script>
+	</body>
+</html>

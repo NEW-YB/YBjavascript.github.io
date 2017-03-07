@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<!--
+    	直接通过浏览器打开没图片。
+    -->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="pintu_css/index.css"/>
+		<script>
+			var dpr = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale='+dpr+',minimum-scale='+dpr+',maximum-scale='+dpr+'" />')
+			var fz = document.documentElement.clientWidth / 10;
+			document.getElementsByTagName('html')[0].style.fontSize = fz + 'px';
+		</script>
+	</head>
+	<body>
+		<div class="content clearfix">
+			<section class="level fl">
+				<div class="h clearfix">
+					<h1 class="title fl">智能拼图</h1>
+					<a href="" class="upload fr">
+						<input type="file" id="fileId" />
+					</a>
+				</div>
+				<div class="choose">
+					<ul class="levelList clearfix">
+						<!--<li class="fl">
+							<img src="pintu_img/desk.jpg"/>
+						</li>
+						<li class="fl">
+							<img src="pintu_img/mimi1.png"/>
+						</li>
+						<li class="fl">
+							11
+						</li>
+						<li class="fl">111</li>-->
+					</ul>
+					<div class="dialog">
+						<div class="h clearfix">
+							<a href="javascript:;" class="fl back diffBack">返回</a>
+							<h2 class="smallTitle fl">请选择难度等级</h2>
+						</div>
+						<ul class="diffLevel">
+							<li>简单</li>
+							<li>普通</li>
+							<li>困难</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="game fl">
+				<div class="h clearfix">
+					<a href="javascript:;" class="fl back pintuBack">返回</a>
+					<h2 class="smallTitle fl">智能拼图</h2>
+					<a href="javascript:;" class="refresh fr"></a>
+				</div>
+				<div class="gameTip clearfix">
+					<span class="gameStart fl">点击开始→切换查看大图</span>
+					<span class="onoff fl"></span>
+				</div>
+				<div id="tab">
+					<section class="clearfix">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+					</section>
+					<section class="clearfix">
+						<div>4</div>
+						<div>5</div>
+						<div>6</div>
+					</section>
+					<section class="clearfix">
+						<div>7</div>
+						<div>8</div>
+						<div>0</div>
+					</section>	
+				</div>
+				<div class="gameDialog">
+					<h2 class="giveup">拼图还没有完成，要放弃吗？</h2>
+					<div class="confirm clearfix">
+						<a href="" class="continue fl">继续</a>
+						<a href="" class="yesGive fl">放弃</a>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="jq3.js" ></script>
+		<script src="pintu_js/index1.js"></script>
+	</body>
+</html>

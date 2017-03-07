@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			ul {
+				list-style: none;
+				padding: 0;
+			}
+			#nav span{
+				padding: 0px 10px;
+			}
+		</style>
+		<script src="./data.js"></script>
+		<script src="./handleData.js"></script>
+		<script>
+			//分层
+
+			/*
+				数据
+				操作数据的方法
+				html模板
+				交互
+			*/
+
+			//先要通过的数据，把树形菜单 导航 文件区域 渲染出来
+
+			var datas = data.files; //获取到数据
+
+			//1. 先渲染树形菜单
+			var treeInitId = -1;
+			//生成树形菜单的结构
+			function createTreeHtml(id){
+				//找到指定id的子元素
+				var childs = handle.getChildsById(datas,id);
+
+				var html = '<ul>';
+
+					childs.forEach(function (value){
+						//根据数据的id找到所有的父级
+						var parentsLength = handle.getParentsAllById(datas,value.id).length;
+						html += '<li><span data-id="'+value.id+'" style="padding-left:'+parentsLength*50+'px;">'+value.title+'</span>';
+
+						//递归找value的子数据
+
+						html += createTreeHtml(value.id);
+
+						html += '</li>'	
+					})
+
+					html += '</ul>';
+
+				return html;
+			}
+			//2. 渲染导航
+			//生成指定id的导航的html结构
+			function createNavHtml(id){
+				//找到指定id的所有的父级
+				//指定一个id，找到这个id对应的数据的所有的父数据
+				var parents = handle.getParentsAllById(datas,id).reverse();
+
+				var html = '';
+
+				parents.forEach(function (value){
+					html += '<span>'+value.title+'</span>'	
+				})
+
+				return html;
+			}
+
+			//3. 渲染文件区域
+			//渲染指定id下的所有的子数据
+
+			function createFilesHtml(id){
+				var childs = handle.getChildsById(datas,id);
+				var filesHtml = '';
+				childs.forEach(function (value){
+					filesHtml += '<div class="file-item">'+value.title+'</div>'	
+				});
+				return filesHtml;
+			}
+
+			
+
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var nav = document.getElementById("nav");
+				var files = document.getElementById("files");
+
+				box.innerHTML = createTreeHtml(treeInitId);	
+
+				
+
+
+
+				var navInitId = 0;
+
+				nav.innerHTML = createNavHtml(0);
+
+				files.innerHTML = createFilesHtml(0);
+
+				//添加事件处理
+
+				//1. 先给属性菜单添加事件处理
+				//找到所有的span
+				var allSpan = box.getElementsByTagName("span");
+
+				//给指定的菜单添加样式
+				var currentId = 0;
+				function positionSpanById(id){
+					//清空上一个
+					for( var i = 0; i < allSpan.length; i++ ){
+						var fileId = allSpan[i].dataset.id;
+						if( fileId == id ){
+							allSpan[i].style.background = 'red';
+						}else{
+							allSpan[i].style.background = '';
+						}
+					}
+				}
+				positionSpanById(currentId)
+
+
+				for( var i = 0; i < allSpan.length; i++ ){
+					allSpan[i].onclick = function (){
+						var fileId = this.dataset.id;
+						nav.innerHTML = createNavHtml(fileId);	
+						files.innerHTML = createFilesHtml(fileId);
+
+						positionSpanById(fileId);
+
+						currentId = fileId;
+					}
+				}	
+			};
+
+			
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="nav">
+			<!-- <span>微云</span>
+			<span>我的音乐</span>
+			<span>周杰伦</span> -->
+		</div>
+		<hr>
+		<div id="box">
+			<!-- <ul id="list">
+				            <li>
+				                <span>第一级</span>
+				                <ul>
+				                    <li>
+				                        <span>第二级</span>
+				                        <ul>
+				                            <li>
+				                                <span>第三级</span>
+				                            </li>
+				                        </ul>
+				                    </li>
+				                    <li>
+				                        <span>第二级</span>
+				                    </li>
+				                    <li>
+				                        <span>第二级</span>
+				                        <ul>
+				                            <li>
+				                                <span>第三级</span>
+				                            </li>
+				                        </ul>
+				                    </li>
+				                </ul>
+				            </li>
+				            <li>
+				                <span>第一级</span>
+				            </li>
+				        </ul> -->
+		</div>
+		<hr>
+		<div id="files">
+			<!-- <div class="file-item">123</div>
+			<div class="file-item">123</div>
+			<div class="file-item">123</div>
+			<div class="file-item">123</div> -->
+		</div>
+	</body>
+</html>

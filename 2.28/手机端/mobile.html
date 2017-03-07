@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var dpr = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale='+dpr+',minimum-scale='+dpr+',maximum-scale='+dpr+'" />')
+			var fz = document.documentElement.clientWidth / 10;
+			document.getElementsByTagName('html')[0].style.fontSize = fz + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style>
+		</style>
+	</head>
+	<body>
+		<header class="head clearfix">
+			<span class="fl brandlogo">
+				中国移动4G
+			</span>
+			<span class="hright fr">
+				<span class="fl xinhao"></span>
+				<span class="fl power"></span>
+				<span class="fl times">17:26</span>
+			</span>
+		</header>
+		<section class="desk">
+			<ul class="appList clearfix">
+				<li class="fl">
+					<a class="anta fl" href="sensorsANTA.html"></a>
+					<span class="fl">安踏官网</span>
+				</li>
+				<li class="fl">
+					<a class="tmall fl xuebi" href="mobileTaobao.html"></a>
+					<span class="fl">天猫</span>
+				</li>
+				<li class="fl">
+					<a class="train fl xuebi" href=""></a>
+					<span class="fl">铁路12306</span>
+				</li>
+				<li class="fl">
+					<a class="JD fl xuebi" href=""></a>
+					<span class="fl">手机京东</span>
+				</li>
+			</ul>
+		</section>
+		<script src="js/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			li div {
+				display: none;
+			}
+		</style>
+		<script>
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>
+				<p>妙味课堂<input type="button" value="编辑"></p>
+				<div>
+					<input type="" name="">
+					<input type="button" value="确定">
+					<input type="button" value="取消">
+				</div>
+			</li>
+			<li>
+				<p>妙味课堂<input type="button" value="编辑"></p>
+			</li>
+			<li>
+				<p>妙味课堂<input type="button" value="编辑"></p>
+				<div>
+					<input type="" name="">
+					<input type="button" value="确定">
+					<input type="button" value="取消">
+				</div>
+			</li>
+		</ul>
+		<script>
+			var lis = document.getElementsByTagName("li");
+
+			for( var i = 0; i < lis.length; i++ ){
+				tab(i);
+
+			}
+
+			function tab(i){
+				var li_p = lis[i].querySelector("p")
+				var li_div = lis[i].querySelector("div")
+
+				var btn = li_p.querySelector("input");
+				
+				btn.onclick = function (){
+					li_p.style.display = "none";	
+					li_div.style.display = "block";	
+				};
+			}
+
+			function fn(){
+				var a = 10;
+				function fn2(){
+					console.log(a);	
+				}
+
+				return fn2
+			}
+			fn();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			li{
+				float: left;
+				list-style: none;
+				padding: 30px;
+				text-align: center;
+			}
+			.red{
+				color: red;
+			}
+			.blue{
+				color: blue;
+			}
+		</style>
+		<script>
+			/*
+				第六天：
+					1.模拟单选
+
+					2.模拟多选
+
+			*/
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>*</li>
+			<li>*</li>
+			<li>*</li>
+			<li>*</li>
+			<li>*</li>
+		</ul>
+		<div></div>
+		<script>
+			/*
+				1. 鼠标移入到li的
+						分左右
+			*/
+		var allLi = document.getElementsByTagName("li");
+		var n = -1;
+
+		for( var i = 0; i < allLi.length; i++ ){
+			allLi[i].index = i;
+			allLi[i].onmouseover = function (){
+				//以鼠标移入的元素，分左右
+
+				for( var i = 0; i < allLi.length; i++ ){
+					if(allLi[i].index <= this.index){  //左边
+						//allLi[i].className = "red";
+						if( this.index < 2  ){
+							allLi[i].className = "blue";
+						}else{
+							allLi[i].className = "red";
+						}
+					}else{
+						allLi[i].className = ""; //右边
+					}
+				}
+
+			};
+
+			allLi[i].onclick = function (){
+				n = this.index;  //记录当前点击的li，目的是在鼠标移开的时候，让小于当前这个n的里li添加class
+			};
+		}
+
+		list.onmouseout = function (){
+			for( var i = 0; i < allLi.length; i++ ){
+				if(allLi[i].index <= n){  //左边
+					//allLi[i].className = "red";
+					if( n < 2  ){
+						allLi[i].className = "blue";
+					}else{
+						allLi[i].className = "red";
+					}
+				}else{
+					allLi[i].className = ""; //右边
+				}
+			}
+				
+		};
+
+
+		</script>
+	</body>
+</html>

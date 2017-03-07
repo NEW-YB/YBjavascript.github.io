@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./data.js"></script>
+		<script src="./handleData.js"></script>
+		<script>
+			//分层
+
+			/*
+				数据
+				操作数据的方法
+				html模板
+				交互
+			*/
+
+			//先要通过的数据，把树形菜单 导航 文件区域 渲染出来
+
+			var datas = data.files; //获取到数据
+
+			//1. 先渲染树形菜单
+			var treeInitId = -1;
+			//生成树形菜单的结构
+			function createTreeHtml(id){
+				//找到指定id的子元素
+				var childs = handle.getChildsById(datas,id);
+
+				var html = '<ul>';
+
+					childs.forEach(function (value){
+						html += '<li><span>'+value.title+'</span>';
+
+						//递归找value的子数据
+
+						html += createTreeHtml(value.id);
+
+						html += '</li>'	
+					})
+
+					html += '</ul>';
+
+				return html;
+			}
+			//2. 渲染导航
+			//生成指定id的导航的html结构
+			function createNavHtml(id){
+				//找到指定id的所有的父级
+				//指定一个id，找到这个id对应的数据的所有的父数据
+				var parents = handle.getParentsAllById(datas,id).reverse();
+
+				var html = '';
+
+				parents.forEach(function (value){
+					html += '<span>'+value.title+'</span>'	
+				})
+
+				return html;
+			}
+
+			
+
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var nav = document.getElementById("nav");
+
+				box.innerHTML = createTreeHtml(treeInitId);	
+
+				var navInitId = 0;
+
+				nav.innerHTML = createNavHtml(0);
+
+				
+
+
+			};
+
+			
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="nav">
+			<!-- <span>微云</span>
+			<span>我的音乐</span>
+			<span>周杰伦</span> -->
+		</div>
+		<hr>
+		<div id="box">
+			<!-- <ul id="list">
+				            <li>
+				                <span>第一级</span>
+				                <ul>
+				                    <li>
+				                        <span>第二级</span>
+				                        <ul>
+				                            <li>
+				                                <span>第三级</span>
+				                            </li>
+				                        </ul>
+				                    </li>
+				                    <li>
+				                        <span>第二级</span>
+				                    </li>
+				                    <li>
+				                        <span>第二级</span>
+				                        <ul>
+				                            <li>
+				                                <span>第三级</span>
+				                            </li>
+				                        </ul>
+				                    </li>
+				                </ul>
+				            </li>
+				            <li>
+				                <span>第一级</span>
+				            </li>
+				        </ul> -->
+		</div>
+		<div id="files">
+			<!-- <div class="file-item">123</div>
+			<div class="file-item">123</div>
+			<div class="file-item">123</div>
+			<div class="file-item">123</div> -->
+		</div>
+	</body>
+</html>

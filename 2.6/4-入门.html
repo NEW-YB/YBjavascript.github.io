@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				第三天：
+					1. if语句
+
+						if(条件){
+								
+						}
+
+						if(){
+	
+						}else{
+	
+						}
+
+						if(){
+	
+						}else if(){
+	
+						}
+						...
+
+						else{
+	
+						}
+
+					2. 布尔值
+						Boolean
+							true false
+
+					3. 条件
+						<  > >= <= 
+
+						if(1<2){
+						
+						}
+
+					4. 三目
+						条件 ? 成立执行 : 不成立执行
+
+					5. 状态 开关
+
+					6. 课上的案例
+						图片切换
+					7. 数组
+						定义数组
+							[1,2,3,,,,]
+						取值
+							数组是有序的集合
+							下标（位置）
+							从0开始 0代表第一个位置
+							1 
+							2
+							3
+
+						arr[0]
+
+					8. 处理过界问题
+						数组的长度 length
+								
+					9. 取数组中的值
+						依次取出数组的值
+						0  1 2 3 4 5 6
+
+						定义一个变量 
+
+						变量++
+
+					var arr = ["a","b"]
+
+					arr[0]
+					arr[1]
+			*/
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<input id="btn" type="button" value="切换div" />
+		<div id="box" style="width: 100px;height: 100px;background: red;"></div>
+		<script>
+			var status = "block";
+			btn.onclick = function (){
+				if( status === "block" ){
+					box.style.display = "none";
+					status = "none"
+				}else{
+					box.style.display = "block";
+					status = "block"
+				}
+			};
+		</script>
+	</body>
+</html>

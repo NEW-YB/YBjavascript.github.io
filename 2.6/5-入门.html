@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				第三天：
+					1. getElementsByTagName(tagname)
+						类数组
+						通过下标取到元素
+
+					2. for语句
+						语法：
+							for(初始化;条件;语句){
+								//循环体 代码
+							}
+
+					3. this
+						
+
+
+			*/
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+		<div></div>
+		<script>
+		var allLi = document.getElementsByTagName("li");
+
+		for( var i = 0; i < allLi.length; i++ ){
+			//allLi[i].style.background = "red";
+			allLi[i].onmouseover = function (){
+				console.log(i);
+				//allLi[i].style.background = 'red';	
+
+				//在移入的时候，拿到当前移入鼠标的li
+
+				//this  函数内部的变量，this的值函数调用的时候决定的
+				//函数是事件处理函数，函数中this的值是触发这个事件的元素
+
+				this.style.background = "red"
+
+			};
+		}
+
+		//打开页面，程序执行完 i变成了4
+
+
+		</script>
+	</body>
+</html>

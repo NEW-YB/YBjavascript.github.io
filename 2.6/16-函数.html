@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				闭包
+
+			*/
+
+			/*var a = 10;
+			function fn(abc){  //高阶函数
+				alert(a)	
+			}
+
+			fn(function (){
+					
+			})*/
+
+
+			var abc = 10000;
+
+			function fn(){
+				//console.log(abc);
+
+				abc =1	
+			}
+			function fn2(){
+				//console.log(abc);
+
+				console.log( abc );
+			}
+
+			// [[Scope]]
+
+			/*(function (){
+				var abc = 3;
+				fn();	   //静态作用域
+				fn2()
+			})();
+			(function (){
+				var abc = 30;
+				fn();	
+			})()*/
+
+
+			function fn(){
+				var n = 0;
+
+				return function (){
+					console.log( n++ );	
+				}
+			}
+			var n = 1000;
+			var f = fn();
+
+			f();
+			f();
+			f();
+			f();
+			f();
+
+			function func(){
+				var a = 10;
+				//console.log( abc );
+			}
+
+			func();
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
