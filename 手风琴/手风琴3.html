@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+    <style>
+
+      li{
+        list-style: none;
+      }
+      ul,li {
+        padding: 0;
+        margin:0;
+      }
+  .fold_wrap{width:1200px;-overflow:hidden;margin:0 auto;}
+  .fold_wrap ul{width:12000px;height:260px;margin:0 auto;-overflow:hidden;}
+  .fold_wrap  ul li{float:left;width:130px;height:260px;position:relative;overflow:hidden;cursor:pointer;}
+    </style>
+    <script src="jquery-2.2.2.min.js"></script>
+    <script>
+    window.onload = function(){
+      //一张图片 为400
+      //总的宽度 1200
+      //每一个li 1200/length
+      //一个li为400，其余的li (1200-400)/length-1
+
+      var sm = $("#sm")
+      var lis = sm.find("li");
+
+      //一个li
+      var oneImgW = 400;
+      //总宽度
+      var total = 1200;
+      //总个数
+      var len = lis.length;
+
+      //剩余的6张图片应该占多少宽度
+      var otherW = (total - oneImgW)/(len-1);
+
+      //平分的宽度
+      var pingfenW = total/len;
+
+
+
+      $(lis[0]).animate({
+        width:oneImgW
+      })
+
+      lis.each(function(index){
+        if(index>=1){
+          $(lis[index]).animate({
+            width:otherW
+          })
+        }
+      })
+      var timer1 = null;
+      lis.on("mouseover",function (){
+        var _this = this;
+        
+        clearInterval(timer1);
+        timer1 = setInterval(function (){
+          var overOneliW = $(_this).width();  
+          if(overOneliW >= 400){
+            clearInterval(timer1)
+          }else{
+            //做运动
+            console.log("做运动");
+            //计算出其余6张图片走了多少距离  目标位置otherW
+            var otherLiTotalW = 0;
+            lis.each(function (index){
+                if(_this !== this){  //排除鼠标移入的li
+                  //其他6张图片每一张如果width大于otherW
+                  var eachLiW = $(this).width(),speed = 0;
+                  //如果这张图片的宽度大于其余六张平分的宽度，应该让这张图片的宽度到otherW上
+                  if(eachLiW > otherW){
+                    //速度稍稍慢一点
+                    speed = (eachLiW - otherW)/10;
+
+                    speed = speed <= 0 ? 1 : speed;
+
+                    $(this).width(eachLiW-speed)
+                  }
+                  //保存的就是其余6张图片运动的总宽度
+                  otherLiTotalW += (eachLiW-speed);
+                }
+            })
+
+            //鼠标移入的图片的width
+           // console.log(otherLiTotalW);
+            var w = total - otherLiTotalW;
+            
+            $(_this).width(w);
+
+          }
+
+        },30)
+
+      })
+
+      lis.on("mouseout",function (){
+         
+      })
+
+
+    };
+    </script>
+  </head>
+
+  <body>
+      <div class="fold_wrap">
+        <ul class="clearfix" id="sm">
+            <li>
+              <img src="1.jpg">
+            </li>
+            <li>
+              <img src="2.jpg">
+            </li>
+            <li>
+              <img src="3.jpg">
+            </li>
+            <li>
+              <img src="4.jpg">
+            </li>
+            <li>
+              <img src="5.jpg">
+            </li>
+            <li>
+              <img src="6.jpg">
+            </li>
+            <li>
+              <img src="7.jpg">
+            </li>
+        </ul>
+      </div>
+
+  </body>
+</html>

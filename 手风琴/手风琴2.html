@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+    <style>
+
+      li{
+        list-style: none;
+      }
+      ul,li {
+        padding: 0;
+        margin:0;
+      }
+  .fold_wrap{width:1200px;-overflow:hidden;margin:0 auto;}
+  .fold_wrap ul{width:12000px;height:260px;margin:0 auto;-overflow:hidden;}
+  .fold_wrap  ul li{float:left;width:130px;height:260px;position:relative;overflow:hidden;cursor:pointer;}
+    </style>
+    <script src="jquery-2.2.2.min.js"></script>
+    <script>
+    window.onload = function(){
+      //一张图片 为400
+      //总的宽度 1200
+      //每一个li 1200/length
+      //一个li为400，其余的li (1200-400)/length-1
+
+      var sm = $("#sm")
+      var lis = sm.find("li");
+
+      //一个li
+      var oneImgW = 400;
+      //总宽度
+      var total = 1200;
+      //总个数
+      var len = lis.length;
+
+      //剩余的6张图片应该占多少宽度
+      var otherW = (total - oneImgW)/(len-1);
+
+      //平分的宽度
+      var pingfenW = total/len;
+
+
+
+      $(lis[0]).animate({
+        width:oneImgW
+      })
+
+      lis.each(function(index){
+        if(index>=1){
+          $(lis[index]).animate({
+            width:otherW
+          })
+        }
+      })
+
+      lis.on("mouseover",function (){
+         $(this).stop().animate({
+          width:oneImgW
+         });
+
+         var _this = this;
+
+         lis.each(function(index){
+           if(this !== _this){
+             $(this).stop().animate({
+               width:otherW
+             })
+           }
+         })
+
+      })
+
+      lis.on("mouseout",function (){
+         lis.each(function(index){
+           $(this).stop().animate({
+             width:pingfenW
+           })
+         })
+
+      })
+
+
+    };
+    </script>
+  </head>
+
+  <body>
+      <div class="fold_wrap">
+        <ul class="clearfix" id="sm">
+            <li>
+              <img src="1.jpg">
+            </li>
+            <li>
+              <img src="2.jpg">
+            </li>
+            <li>
+              <img src="3.jpg">
+            </li>
+            <li>
+              <img src="4.jpg">
+            </li>
+            <li>
+              <img src="5.jpg">
+            </li>
+            <li>
+              <img src="6.jpg">
+            </li>
+            <li>
+              <img src="7.jpg">
+            </li>
+        </ul>
+      </div>
+
+  </body>
+</html>
