@@ -4,7 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
     <style>
-
       li{
         list-style: none;
       }
@@ -12,9 +11,40 @@
         padding: 0;
         margin:0;
       }
-  .fold_wrap{width:1200px;-overflow:hidden;margin:0 auto;}
+  .fold_wrap{width:1200px;overflow:hidden;margin:0 auto;}
   .fold_wrap ul{width:12000px;height:260px;margin:0 auto;-overflow:hidden;}
   .fold_wrap  ul li{float:left;width:130px;height:260px;position:relative;overflow:hidden;cursor:pointer;}
+  
+		#box{
+			margin-top: 50px;
+				width: 900px;
+				height: 320px;
+				background: gray;
+				position: relative;
+			}
+		#box img{
+				width: 200px;
+				height: 125px;
+				vertical-align: top;
+				border: 3px solid white;
+				position:absolute;
+				top: 100px;
+			    /*top:-1000px;
+			    left:-1000px;*/
+			    border:3px solid white;
+			    cursor:pointer;
+			    opacity: 0.4;
+			    /*transition: 2s;*/
+			}
+		#box img:nth-of-type(2){
+				top: 30px;
+				width: 400px;
+				height: 250px;
+				opacity: 1;
+			}
+		#box img:nth-of-type(4){
+				opacity: 0;
+			}
     </style>
     <script src="jquery-2.2.2.min.js"></script>
     <script>
@@ -138,31 +168,37 @@ console.log(speed)
   </head>
 
   <body>
-      <div class="fold_wrap">
-        <ul class="clearfix" id="sm">
-            <li>
-              <img src="1.jpg">
-            </li>
-            <li>
-              <img src="2.jpg">
-            </li>
-            <li>
-              <img src="3.jpg">
-            </li>
-            <li>
-              <img src="4.jpg">
-            </li>
-            <li>
-              <img src="5.jpg">
-            </li>
-            <li>
-              <img src="6.jpg">
-            </li>
-            <li>
-              <img src="7.jpg">
-            </li>
-        </ul>
-      </div>
-
+		<div class="fold_wrap">
+				<ul class="clearfix" id="sm">
+						<li>
+						  <img src="1.jpg">
+						</li>
+						<li>
+						  <img src="2.jpg">
+						</li>
+						<li>
+						  <img src="3.jpg">
+						</li>
+						<li>
+						  <img src="4.jpg">
+						</li>
+						<li>
+						  <img src="5.jpg">
+						</li>
+						<li>
+						  <img src="6.jpg">
+						</li>
+						<li>
+						  <img src="7.jpg">
+						</li>
+				</ul>
+		</div>
+		<div id="box">
+			<img src="img/mimi-0.jpg"/>
+			<img src="img/mimi-1.jpg"/>
+			<img src="img/mimi-2.jpg"/>
+			<img src="img/mimi-3.jpg"/>
+		</div>
+		<script src="js/index.js"></script>
   </body>
 </html>
