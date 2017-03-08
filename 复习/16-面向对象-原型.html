@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin:0;
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+				margin: 100px;
+			}
+			#box span {
+				background: yellow;
+			}
+			#tips {
+				width: 100px;
+				height:100px;
+				background: blue;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<script>
+			
+			/*
+				面向对象
+					js中具体实现
+				类   类描述了一组有相同特性（属性）和相同行为（方法）的对象
+				对象 是类的具体实现
+
+				原型 prototype
+					函数下的一个属性
+
+				__proto__
+					对象都有这个属性
+					这个属性的值创建这个对象的构造函数的原型
+				原型链
+
+			*/
+
+			Object.prototype.abc = 1111;
+
+			//构造函数
+			function Person(userName){
+				this.userName = userName;
+			}
+
+			Person.prototype.city = "北京";
+			Person.prototype.say = function (){
+				console.log(this.userName);	
+			}
+
+			var p = new Person("leo");
+			var p1 = new Person("leo");
+
+			/*p.say();
+			p1.say();*/
+
+			function Coder(userName){
+				Person.call(this,userName);	
+			}
+
+			//Coder.prototype = Person.prototype;
+
+			for( var attr in Person.prototype ){
+				console.log( attr );
+				if(Person.prototype.hasOwnProperty(attr)){
+					Coder.prototype[attr] = Person.prototype[attr];
+				}
+			}
+			//js 多态
+			Coder.prototype.say = function (){
+				console.log("我该写了父级的say");	
+			};
+
+			var c = new Coder("momo");
+
+			c.say();
+
+ 
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

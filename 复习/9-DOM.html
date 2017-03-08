@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				DOM
+					文档对象模型
+
+				DOM结构
+
+				DOM节点
+
+				节点类型
+					文本节点 3  #text
+					元素节点 1  标签名
+					属性节点 2  属性名
+					注释节点 8  #comment
+					文档节点 9  #document
+
+				nodeType
+				nodeName
+
+				节点关系
+					父子级
+					兄弟级
+
+					祖先级
+					子孙级
+
+				操作节点
+					获取节点
+						getElementById
+						getElementsByTagName
+						getElementsByClassName
+						querySelector
+						querySelectorAll
+						parentNode
+						children
+						childNodes
+						firstElementChild/firstChild
+						lastElementChild/lastChild
+						nextElementSibling/nextSibling
+						perviousElementSiblings/perviousSibling
+
+					删除节点
+						removeChild
+					替换节点
+						replaceChild
+					添加节点
+						appendChild
+						insertBefore
+					创建节点
+						createElement
+					克隆节点
+						cloneNode
+					获取/设置行间自定义属性
+						getAttribute
+						setAttribute
+
+
+				通过js对页面中的元素进行操作
+			*/
+		</script>
+	</head>
+
+	<body>
+		<div id="123">12</div>
+		<div id="123">12</div>
+		<img id="imgs" src="1.png">
+		<script>
+			alert(imgs.src)
+			alert(imgs.getAttribute("src"))
+		</script>
+	</body>
+</html>

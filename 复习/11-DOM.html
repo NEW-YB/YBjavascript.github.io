@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin:0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin: 100px;
+			}
+		</style>
+		<script>
+			/*
+				1. 获取元素的样式
+
+			*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<table id="tb">
+			<thead>
+				<tr>
+					<th>1</th>
+					<th>1</th>
+					<th>1</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>123</td>
+				</tr>
+			</tfoot>
+		</table>
+		<script>
+			var tbodys = tb.tBodies;
+			var rows = tbodys[0].rows
+			var cells = rows[0].cells;
+console.log( rows );
+//			console.log( cells[0] );
+		</script>
+	</body>
+</html>

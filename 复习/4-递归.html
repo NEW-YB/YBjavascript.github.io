@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				程序调用自身的编程技巧称为递归（ recursion）
+
+				在某个条件下让递归停下来
+			*/
+
+			function fn(n){
+				if(n<=1) return n;
+				return fn(n-1)+n
+			}
+
+			console.log( fn(5) );
+			console.log( fn(4) );
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

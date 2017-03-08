@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				js中定时器就是一个函数
+
+				setInterval()  连续型定时器
+				setTimeout()   延迟性定时器
+
+				clearInterval()
+				clearTimeout()
+
+				运动，不断改变每一个属性的值
+			*/
+			//timer是一个变量，存的一个值
+			var timer = setInterval(function (){
+				console.log(1);
+			},1000)
+
+			console.log(timer);
+
+			var timer2 = setInterval(function (){
+				console.log(2);	
+			},1000)
+
+			clearInterval(timer);  //停止定时器
+			//即便是清除定时器，那么timer值不会发生改变，除非手动的又给timer赋值了
+
+			timer = 100000;
+
+			console.log(timer);
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

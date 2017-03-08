@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin:0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin: 100px;
+			}
+		</style>
+		<script>
+			/*
+				1. 获取元素的样式
+					a. element.style[attr]  只能获取行间样式
+					b. getComputeStyle/currentStyle  获取计算后的样式
+					c. getBoundingClientRect()
+							元素相对于浏览器左边和上边的距离
+					d. offsetWidth/offsetHeight
+					   clientWidth/clientHeight
+					e. offsetLeft/offsetTop
+			*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box">12</div>
+		<script>
+		console.log( box.getBoundingClientRect() );
+		console.log(getComputedStyle(box).width)
+		</script>
+	</body>
+</html>

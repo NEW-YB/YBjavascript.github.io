@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			body{
+				background: #232323; color: #fff; font-family: "微软雅黑"}
+			img{
+				width: 150px;
+				height: 210px;
+				border: none;
+				vertical-align: top;
+			}
+			.box{
+				width: 1200px;
+				height: 210px;
+				margin: 100px auto;
+			}
+			ul li{
+				list-style: none;
+				vertical-align: top;
+				width: 150px;
+				height: 210px;
+				overflow: hidden;
+				float: left;
+				position: relative;
+			}
+			ul li p{
+				width: 150px;
+				height: 420px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		<script src="tools.js"></script>
+		<script src="MTween.js"></script>
+<script>
+/*
+	需求：
+		让不同时间点发生一个向上的位移变化
+	步骤：
+		1. 打开页面，就为当前的时间
+			获取当前时间，拼成一个"00:00:00"字符串，映射到图片的名字上
+
+		2. 每隔一秒钟后，就让发生变化的时间点发生位移变化
+			a. 怎么判断出时间点发生了变化
+				00:00:00 00:00:01 00:00:02 .... 00:00:10
+			b. 怎么发生位移变化
+				无缝滚动原理
+
+*/
+	//小于10的数，补零
+	function addZero(n){
+		return n < 10 ? "0"+n : n;	
+	}
+
+	//获取时分秒
+	function getTimes(){
+		var d = new Date();
+		var H = d.getHours();
+		var M = d.getMinutes();
+		var S = d.getSeconds();
+
+		//返回值就是记录的时间
+		//return [H,M,S]
+		return {
+			hours:H,
+			minutes:M,
+			second:S
+		}
+	}
+
+	//所有p标签中的第一个img，显示当前的时间
+
+	var nowTime = getTimes();
+	var nowTimeStr = addZero(nowTime.hours) + ":" + addZero(nowTime.minutes) + ":" + addZero(nowTime.second);
+	//10:14:26;
+
+	/*for( var i = 0; i < nowTimeStr.length; i++ ){
+		"img"+nowTimeStr.charAt(i)+"png"
+	}*/
+
+	window.onload = function(){
+		var list = document.getElementById("list");
+		var allP = list.getElementsByTagName("p");
+
+		for( var i = 0; i < allP.length; i++ ){
+			//"img"+nowTimeStr.charAt(i)+"png"  图片
+			var img1 = allP[i].getElementsByTagName("img")[0];
+			if(nowTimeStr.charAt(i) !== ":"){
+				img1.src = "./img/"+nowTimeStr.charAt(i)+".png";
+			}
+		}
+
+		setInterval(function (){
+			var currentTime = getTimes();
+			var currentTimeStr = addZero(currentTime.hours) + ":" + addZero(currentTime.minutes) + ":" + addZero(currentTime.second);	
+
+			for( var i = 0; i < allP.length; i++ ){
+				//"img"+nowTimeStr.charAt(i)+"png"  图片
+				var img1 = allP[i].getElementsByTagName("img")[0];
+				if(currentTimeStr.charAt(i) !== ":"){
+					img1.src = "./img/"+currentTimeStr.charAt(i)+".png";
+				}
+			}
+		},1000)
+
+	};
+
+</script>
+	</head>
+	<body>
+		<div class="div1"></div>
+		<div class="box">
+			<ul id="list">
+				<li>
+					<p>
+						<img src="img/0.png" alt="0" />
+						<img src="img/0.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/0.png" alt="0" />
+						<img src="img/0.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/fuh.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/0.png" alt="0" />
+						<img src="img/0.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/0.png" alt="0" />
+						<img src="img/0.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/fuh.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/0.png" alt="0" />
+						<img src="img/0.png" alt="0" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="img/0.png" alt="0" />
+						<img src="img/0.png" alt="0" />
+					</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

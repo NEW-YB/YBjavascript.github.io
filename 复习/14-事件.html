@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin:0;
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+				margin: 100px;
+			}
+			#box span {
+				background: yellow;
+			}
+			#tips {
+				width: 100px;
+				height:100px;
+				background: blue;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<script>
+			
+			/*
+				事件
+					给一个元素绑定事件处理函数
+						DOM0级事件
+							on+事件
+						DOM2级事件
+							addEventListener()  给一个元素的同一个事件绑定对个事件处理函数
+
+					事件对象
+						获取事件对象
+							事件处理函数的第一个参数
+						属性
+							clientX clientY
+							target
+					事件流
+						window -捕获--> 目标源 --冒泡--> window
+							三个阶段
+								1. 捕获阶段
+								2. 目标阶段
+								3. 冒泡阶段
+
+					事件分类
+						鼠标事件
+							click mouseover mouseout movemove。。。
+						焦点事件
+							focus blur
+						键盘事件
+							keydown keyup
+						滚轮事件
+							mousewheel
+							DOMMouseScroll
+					阻止冒泡
+						ev.stopPropagation();
+						ev.cancelBubble = true;
+					取消默认行为
+						ev.preventDefault();
+						return false
+
+					右键菜单事件
+						contextmenu
+
+			*/
+
+			window.navigator.userAgent  = 123;
+
+			alert( window.navigator.userAgent )
+
+			document.oncontextmenu  = function (ev){
+				ev.preventDefault();	
+			};
+ 
+		</script>
+	</head>
+
+	<body>
+		<!-- <div style="height: 400px;overflow:hidden;">
+			<div style="width: 500px;height: 450px;overflow:hidden;">
+				<iframe style="width: 100%;height: 100%;" frameborder="no" width="100%" src="https://www.baidu.com"></iframe>
+			</div>
+		</div> -->
+		<div id="box" style="width: 300px;height: 300px;border: 1px solid #000;overflow: hidden;position: relative;">
+			<div id="bar_box" style="width: 20px;height: 100%;position: absolute;right: 0px;top:0;background: red;">	
+				<div id="bar" style="background: blue;width:100%;height: 50px;position: absolute;top:0;right:0;"></div>
+			</div>
+			<ul>
+				
+				<li>123</li>
+			</ul>
+		</div>
+		<script>
+			var aW = box.clientHeight;
+			var bW = box.scrollHeight;  //内容高度
+
+			bar.style.height = aW/bW*aW + "px";
+		</script>
+	</body>
+</html>

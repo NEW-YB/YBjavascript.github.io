@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin:0;
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+				margin: 100px;
+			}
+			#box span {
+				background: yellow;
+			}
+			#tips {
+				width: 100px;
+				height:100px;
+				background: blue;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<script>
+			
+			/*
+				面向对象
+					js中具体实现
+				类   类描述了一组有相同特性（属性）和相同行为（方法）的对象
+				对象 是类的具体实现
+			*/
+
+			//构造函数
+			/*function Person(userName){
+				this.userName = userName;
+			}
+
+			//创建对象
+			var p = new Person("leo")
+
+			function Car(color){
+				this.color = color;	
+			}
+
+			var c = new Car("red");
+
+			console.log( c.color );*/
+
+
+			class Student {
+				constructor(info){
+					this.info = info
+				}
+
+				coding(){
+
+				}
+
+				ps(){
+
+				}
+
+			}
+
+			var m = new Student("momo");
+
+			console.log( m );
+
+
+			var arr = new Array(1,2,3,4)
+			var arr = new Array("a")
+
+ 
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

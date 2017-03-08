@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				快速排序
+			*/
+
+			var arr = [99,6,9,10,3,5,710,8];
+
+			function sorts(arr){
+
+				if(arr.length <= 1) return arr;
+
+				//先从arr中拿出（删除）第一项
+
+				var first = arr.shift();
+
+				//小于first的放在左边，大于first放在右边
+				var left = [];
+				var right = [];
+
+				for( var i = 0; i < arr.length; i++ ){
+					if( arr[i]>first ){
+						left.push(arr[i])
+					}else{
+						right.push(arr[i])
+					}
+				}
+
+				console.log( left,first,right );
+
+				return sorts(left).concat(first,sorts(right))
+
+			}
+
+			console.log( sorts(arr) );
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

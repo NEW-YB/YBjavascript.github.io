@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			body{
+				margin:0;
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+				margin: 100px;
+			}
+			#box span {
+				background: yellow;
+			}
+			#tips {
+				width: 100px;
+				height:100px;
+				background: blue;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+		</style>
+		<script>
+			/*
+				1. 获取元素的样式
+
+			*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box">
+			减肥减肥减肥附加费就放假放假减肥减肥减肥附加费就放假放假减肥减肥减肥附加费就放假放假减肥减肥<span>妙味课堂</span>减肥附加费就放假放假减肥减肥减肥附加费就<span>妙味</span>放假放假减肥减肥减肥附加费就放假放假减肥减肥减肥附加费就放假放假减肥减肥减肥附加费就放假放假减肥减肥减肥附加费就放假放假
+		</div>
+		<div id="tips">
+			
+		</div>
+		<script>
+			var allSpan = box.getElementsByTagName("span");
+			for( var i = 0; i < allSpan.length; i++ ){
+				allSpan[i].onmouseover = function (){
+					var rect = this.getBoundingClientRect();
+					tips.style.left = rect.right - 100 + "px";
+					tips.style.top = rect.bottom + "px";
+				};
+			}
+		</script>
+	</body>
+</html>
