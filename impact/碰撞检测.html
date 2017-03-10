@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.divs{
+				width: 200px;
+				height: 200px;
+				background:pink;
+				margin:30px;
+				float:left;
+			}
+			.kuang{
+				width:0;
+				height: 0;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border: 1px dashed red;
+				background: #000;
+			}
+		</style>
+		<script src="tools.js"></script>
+		<script>
+			window.onload = function(){
+				//画方块
+				t.on(document,"mousedown",function (ev){
+					var div = document.createElement("div");
+					div.className = "kuang";
+
+					document.body.appendChild(div);
+
+					var disX = ev.clientX;  //摁下去的x位置
+					var disY = ev.clientY;  //摁下去的Y位置
+
+					function fn(ev){
+						//控制div的 left top width height
+						
+						div.style.width = Math.abs( ev.clientX - disX ) + "px";
+						div.style.height = Math.abs( ev.clientY - disY ) + "px";
+
+						div.style.left = Math.min(ev.clientX,disX) + "px";
+						div.style.top = Math.min(ev.clientY,disY) + "px";
+
+					}
+
+					t.on(document,"mousemove",fn)
+					t.on(document,"mouseup",function (ev){
+						t.off(document,"mousemove",fn)
+					})
+
+				})
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="divs"></div>
+		<div  class="divs"></div>
+		<div  class="divs"></div>
+		<div  class="divs"></div>
+	</body>
+</html>

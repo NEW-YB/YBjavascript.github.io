@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.divs{
+				width: 200px;
+				height: 200px;
+				background:pink;
+				margin:30px;
+				float:left;
+			}
+			.kuang{
+				width:0;
+				height: 0;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border: 1px dashed red;
+				background: #000;
+			}
+			#files {
+				width: 1000px;
+				height: 1000px;
+				border:1px solid #000;
+			}
+		</style>
+		<script src="tools.js"></script>
+		<script>
+
+			window.onload = function(){
+
+				function getRect(obj){
+					return obj.getBoundingClientRect();
+				}
+				/*
+					obj1 拖拽的元素
+					obj2 被碰撞的元素
+				*/
+				function pengzhuang(obj1,obj2){
+					var obj1Rect = 	getRect(obj1);
+					var obj2Rect = 	getRect(obj2);
+
+					//如果obj1碰上了哦obj2返回true，否则放回false
+					var obj1Left = obj1Rect.left;
+					var obj1Right = obj1Rect.right;
+					var obj1Top = obj1Rect.top;
+					var obj1Bottom = obj1Rect.bottom;
+
+					var obj2Left = obj2Rect.left;
+					var obj2Right = obj2Rect.right;
+					var obj2Top = obj2Rect.top;
+					var obj2Bottom = obj2Rect.bottom;
+
+					if( obj1Right < obj2Left || obj1Left > obj2Right || obj1Bottom < obj2Top || obj1Top > obj2Bottom ){
+						return false;
+					}else{
+						return true;
+					}
+
+
+				}
+
+				var allDiv = document.querySelectorAll(".divs");
+
+				//画方块
+				var div = null,
+					disX = null,
+					disY = null;
+					t.on(document,"mousedown",function (ev){
+
+						if(ev.which !== 1) return;
+
+						div = document.createElement("div");
+						div.className = "kuang";
+
+						document.body.appendChild(div);
+
+						disX = ev.clientX;  //摁下去的x位置
+						disY = ev.clientY;  //摁下去的Y位置
+						
+						document.onmousemove = function (ev){
+							div.style.width = Math.abs( ev.clientX - disX ) + "px";
+							div.style.height = Math.abs( ev.clientY - disY ) + "px";
+
+							div.style.left = Math.min(ev.clientX,disX) + "px";
+							div.style.top = Math.min(ev.clientY,disY) + "px";
+
+							//检测碰撞
+							for( var i = 0; i < allDiv.length; i++ ){
+								if( pengzhuang(div,allDiv[i]) ){
+									allDiv[i].style.background = "blue";
+								}else{
+									allDiv[i].style.background = "pink";
+								}
+							}
+
+						}
+
+						document.onmouseup = function (ev){
+							document.onmousemove = null;
+							document.onmouseup = null;
+							document.body.removeChild(div);
+						}
+
+					ev.preventDefault();
+				});
+			}
+
+
+		</script>
+	</head>
+
+	<body>
+		11222
+		<div class="divs"></div>
+		<div  class="divs"></div>
+		<div  class="divs"></div>
+		<div  class="divs"></div>
+	</body>
+</html>

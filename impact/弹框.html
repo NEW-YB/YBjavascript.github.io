@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<link rel="stylesheet" href="demo.css">
+		<script src="dialog.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<input type="button" value="移动到" id="btn" />
+		<input type="button" value="存储" id="btn2" />
+		<script>
+			
+			btn.onclick = function (){
+
+				//alert(1)
+				
+				dialogFn({
+					title:"移动到",
+					content:"<input id='text' />"
+				})
+
+			};
+
+			btn2.onclick = function (){
+				dialog({
+					title:"存储",
+					content:"存储"
+				})	
+			};
+
+		</script>
+	</body>
+</html>

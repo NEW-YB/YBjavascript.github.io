@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.divs{
+				width: 200px;
+				height: 200px;
+				background:pink;
+				margin:30px;
+				float:left;
+			}
+			.kuang{
+				width:0;
+				height: 0;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border: 1px dashed red;
+				background: #000;
+			}
+		</style>
+		<script src="tools.js"></script>
+		<script>
+
+			window.onload = function(){
+
+
+				//画方块
+				var div = null,
+					disX = null,
+					disY = null;
+				t.on(document,"mousedown",function (ev){
+					div = document.createElement("div");
+					div.className = "kuang";
+
+					document.body.appendChild(div);
+
+					disX = ev.clientX;  //摁下去的x位置
+					disY = ev.clientY;  //摁下去的Y位置
+					t.on(document,"mousemove",moveFn);
+					//点了多少次就绑定了多少次
+					t.on(document,"mouseup",upFn)
+
+				});
+				function upFn(ev){
+					t.off(document,"mousemove",moveFn);
+					t.off(document,"mouseup",upFn);
+					//删除掉框选的div
+					console.log( div );
+					document.body.removeChild(div);
+
+				}
+
+				function moveFn(ev){
+					//控制div的 left top width height
+					
+					div.style.width = Math.abs( ev.clientX - disX ) + "px";
+					div.style.height = Math.abs( ev.clientY - disY ) + "px";
+
+					div.style.left = Math.min(ev.clientX,disX) + "px";
+					div.style.top = Math.min(ev.clientY,disY) + "px";
+
+				}
+			};
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<div class="divs"></div>
+		<div  class="divs"></div>
+		<div  class="divs"></div>
+		<div  class="divs"></div>
+	</body>
+</html>
