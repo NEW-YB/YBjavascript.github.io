@@ -453,13 +453,34 @@ cont_right.onmousedown = function(e){
 	        //伪装者和那个li碰上了，这个li就添加上样式
 	        //selectArr 选中的
 	        isHitElement = null;//一直为null
-	        a:for( var i = 0; i < lis.length; i++ ){        	        	
+// 	        a:for( var i = 0; i < lis.length; i++ ){        	        	
+// 	        	for( var j = 0; j < selectArr.length; j++ ){
+// 	        		if( selectArr[j] === lis[i] ){
+// // 排除选中的	        	continue:a
+// 	        		}
+// 	        	}
+// 	        	//如果是选中的文件，跳过碰撞检测的
+// 	        	if( peng(imposterDiv,lis[i]) ){
+// 	        		t.addClass(lis[i],"active");
+// 	        		//存一下被碰撞的元素
+// 	        		isHitElement = lis[i];		
+// 	        	}else{
+// 	        		t.removeClass(lis[i],"active");	        		
+// 	        	}
+// 	        }
+	        for( var i = 0; i < lis.length; i++ ){
+	        	var onOff = false;
+	        	//排除选中的
+	        	
 	        	for( var j = 0; j < selectArr.length; j++ ){
 	        		if( selectArr[j] === lis[i] ){
-//排除选中的	        	continue:a
+	        			onOff = true;
 	        		}
 	        	}
 	        	//如果是选中的文件，跳过碰撞检测的
+	        	if( onOff ) continue;
+
+
 	        	if( peng(imposterDiv,lis[i]) ){
 	        		t.addClass(lis[i],"active");
 	        		//存一下被碰撞的元素
