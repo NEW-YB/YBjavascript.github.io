@@ -270,11 +270,11 @@ section.text div{
 	transition: 1.3s;
 	opacity: 0;
 }
-@media (max-width: 1024px){
-	.explode-wrapper{
-		transform: scale(0.5);
-	}
-}
+// @media (max-width: 1024px){
+// 	.explode-wrapper{
+// 		transform: scale(0.5);
+// 	}
+// }
 
 .explode-wrapper {
     width: 500px;
