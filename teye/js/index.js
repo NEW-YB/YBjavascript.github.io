@@ -53,6 +53,8 @@ window.onresize=function(){
 	svgH=parseFloat($("svg").css("height"));
 	if(num==-1){
 		$("svg").html('<path class="path" d="M0 '+svgH+' L0 0 L'+svgW+' 0 L'+svgW+' '+svgH+' Z" stroke="green" stroke-width="5" fill="none" />')
+	}else if(num>=5){
+		$("svg").html('<path d="M0 '+svgH*2+' L0 0 L'+svgW*2+' 0 L'+svgW*2+' '+svgH*2+' Z" stroke="green" stroke-width="5" fill="none" />')
 	}else{
 		$("svg").html('<path d="M0 '+svgH+' L0 0 L'+svgW+' 0 L'+svgW+' '+svgH+' Z" stroke="green" stroke-width="5" fill="none" />')
 	}
@@ -373,9 +375,13 @@ document.onmousewheel=function(e){
 			$("path").css("animation-play-state","running")
 		},800)
 		if(num==0){
-//			textDiv.eq(0).css("opacity",0);
-//			textDiv.eq(0).css("top","20%");
-//			textDiv.eq(0).show();
+			svgW=parseFloat($("svg").css("width"));
+			svgH=parseFloat($("svg").css("height"));
+			$("svg").html('<path class="path" d="M0 '+svgH+' L0 0 L'+svgW+' 0 L'+svgW+' '+svgH+' Z" stroke="green" stroke-width="5" fill="none" />')
+			$("path").css("animation-play-state","paused")
+				setTimeout(function(){
+					$("path").css("animation-play-state","running")
+				},800)
 			$(".one").animate({
 				bottom:"100%"
 			},2000);
@@ -595,6 +601,7 @@ document.onmousewheel=function(e){
 			$("svg").animate({
 				"opacity":"1"
 			},500)
+
 			$(".one").css("z-index","23")
 			textDiv.eq(4).delay(500).animate({
 				opacity:1,
@@ -881,6 +888,8 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		$(".slides .active").css("top",10);
 		num=-1;
 		$("svg").hide();
+		// $("svg").find("path").addClass("path")
+		// $("svg").html('<path class="path" d="M0 '+svgH+' L0 0 L'+svgW+' 0 L'+svgW+' '+svgH+' Z" stroke="green" stroke-width="5" fill="none" />')
 		oneEyeLeft.css("transform","rotate(0deg)");
 		oneEyeRight.css("transform","rotate(0deg)");
 		$(".one").animate({
@@ -1541,6 +1550,9 @@ $(".onoff").on("click",function(){
 	};
 	num=-1;
 	$("svg").hide();
+	// svgW=parseFloat($("svg").css("width"));
+	// svgH=parseFloat($("svg").css("height"));
+	// $("svg").html('<path class="path" d="M0 '+svgH+' L0 0 L'+svgW+' 0 L'+svgW+' '+svgH+' Z" stroke="green" stroke-width="5" fill="none" />')
 	oneEyeLeft.css("transform","rotate(0deg)");
 	oneEyeRight.css("transform","rotate(0deg)");
 	$(".one").animate({
