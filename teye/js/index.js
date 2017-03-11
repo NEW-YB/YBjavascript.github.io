@@ -375,7 +375,7 @@ document.onmousewheel=function(e){
 //			textDiv.eq(0).css("top","20%");
 //			textDiv.eq(0).show();
 			$(".one").animate({
-				bottom:676
+				bottom:"100%"
 			},2000);
 			$(".oneText").animate({
 				opacity:0
@@ -524,10 +524,10 @@ document.onmousewheel=function(e){
 			clearInterval(timer2);
 			$(".slideshow").css("z-index","27");
 			connected.animate({
-				bottom:"676px"
+				bottom:"100%"
 			},1300)
 			$(".teye-wrapper-connected").animate({
-				bottom:"676px"
+				bottom:"100%"
 			},1300)
 			$(".slideshow").animate({
 				bottom:"0"
@@ -727,7 +727,7 @@ document.onmousewheel=function(e){
 				},400)
 			})
 			$(".slideshow").animate({
-				bottom:"-676"
+				bottom:"-100%"
 			},1300)
 			
 		}		
@@ -926,12 +926,12 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第二页.............................
 	if(index==5){
 		num=0;
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -977,14 +977,14 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第三页.............................
 	if(index==1){
 		num=1;
 		oneEyeLeft.css("transform","rotate(90deg)");
 		oneEyeRight.css("transform","rotate(-90deg)");
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1028,14 +1028,14 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第四页.............................
 	if(index==6){
 		num=2;
 		oneEyeRight.css("transform","rotate(-90deg)");
 		oneEyeLeft.css("transform","rotate(0deg)");
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1080,14 +1080,14 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第五页.............................
 	if(index==2){
 		num=3;
 		oneEyeLeft.css("transform","rotate(20deg)");
 		oneEyeRight.css("transform","rotate(-20deg)");
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1133,14 +1133,14 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第六页.............................
 	if(index==7){
 		num=4;
 		oneEyeLeft.css("transform","rotate(-20deg)");
 		oneEyeRight.css("transform","rotate(20deg)");
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1187,12 +1187,12 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第七页.............................
 	if(index==3){
 		num=5;
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1242,12 +1242,12 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 	}
 	//.................................第八页.............................
 	if(index==8){
 		num=6;
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1318,7 +1318,7 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		teyePink.css("left",187);
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 		
 //....................直接点击跳转第8页移动图形.........................
 		picWithMouse();
@@ -1326,7 +1326,7 @@ $(".toggle-menu-wrapper li").on("click",function(){
 	//.................................第九页.............................
 	if(index==4){
 		num=7;
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1400,7 +1400,7 @@ $(".toggle-menu-wrapper li").on("click",function(){
 //		connected.css("z-index","initial")
 		connected.css("bottom",0);
 		$(".teye-wrapper-connected").css("bottom",0);
-		$(".slideshow").css("bottom",-676);
+		$(".slideshow").css("bottom","-100%");
 		$(".skills").css("z-index","18");
 		$(".skills").css("opacity",0);
 		$(".explode").css("z-index","25")
@@ -1421,7 +1421,7 @@ $(".toggle-menu-wrapper li").on("click",function(){
 	//.................................第十页.............................
 	if(index==9){
 		num=8;
-		$(".one").css("bottom",676);
+		$(".one").css("bottom","100%");
 		$(".oneText").css("opacity",0);
 		$(".onoff").css("right",8);
 		$(".onoff span").css("border-color","rgb(147, 90, 36)")
@@ -1441,10 +1441,10 @@ $(".toggle-menu-wrapper li").on("click",function(){
 		},2300)
 		$(".slideshow").css("z-index","27");
 			connected.animate({
-				bottom:"676px"
+				bottom:"100%"
 			},1300)
 			$(".teye-wrapper-connected").animate({
-				bottom:"676px"
+				bottom:"100%"
 			},1300)
 			$(".slideshow").animate({
 				bottom:"0"
@@ -1588,7 +1588,7 @@ $(".onoff").on("click",function(){
 	teyePink.css("left",187);
 	connected.css("bottom",0);
 	$(".teye-wrapper-connected").css("bottom",0);
-	$(".slideshow").css("bottom",-676);
+	$(".slideshow").css("bottom","-100%");
 	$(".ico-mouse").show();
 	$(".ico-mouse .wheel").show();
 	$(".slides li a").css("background","rgb(255, 255, 255)");
