@@ -553,7 +553,7 @@ section.text div{
 .slideshow{
 	cursor: -webkit-grab;
 	cursor: grab;
-	bottom: -676px;
+	bottom: -100%;
 }
 .slideImg{
 	position: absolute;
