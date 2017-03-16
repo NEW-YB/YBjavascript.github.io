@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			/*
+				extends  一个类型继承另一个类
+
+				class child extends parent {
+	
+				}
+			*/
+			
+			//类  基类
+			class Person {
+
+				//静态的方法,不能定义属性（es6不支持）
+
+				static abc(){
+					console.log("我是静态方法");
+				}
+
+				constructor(userName){
+					
+					this.userName = userName;
+				}
+				run(){
+					console.log( this );
+					console.log( this.userName+"我会奔跑" );
+				};
+				say(){
+
+				};
+
+			};
+
+			//Coder类
+			class Coder extends Person {
+
+			}
+
+			var c = new Coder("leo");
+
+			console.log( c );
+
+			c.run();
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

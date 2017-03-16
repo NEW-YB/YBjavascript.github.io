@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			//类
+			class Person {
+
+				//静态的方法,不能定义属性（es6不支持）
+
+				static abc(){
+					console.log("我是静态方法");
+				}
+
+				constructor(userName){
+					
+					this.userName = userName;
+				}
+				run(){
+					console.log( this );
+					console.log( this.userName+"我会奔跑" );
+				};
+				say(){
+
+				};
+
+			}
+
+		
+			//只能通过过类调用静态的方法
+			console.log( Person.abc );
+
+
+
+			//实例
+			var p1 = new Person("leo");
+			var p2 = new Person("momo");
+
+			console.log( p1.abc );
+
+			/*function Person(){
+					
+			}
+
+			Person.abc = function (){
+					
+			}
+
+			person.abc();*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

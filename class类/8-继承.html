@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			/*
+				extends  一个类型继承另一个类
+
+				class child extends parent {
+	
+				}
+			*/
+			
+			//类  基类
+			class Person {
+
+				//静态的方法,不能定义属性（es6不支持）
+
+				static abc(){
+					console.log("我是静态方法");
+				}
+
+				constructor(userName){
+					
+					this.userName = userName;
+				}
+				run(){
+					console.log( this );
+					console.log( this.userName+"我会奔跑" );
+				};
+				say(){
+
+				};
+
+			};
+
+			/*
+				第一种情况，super作为函数调用时，代表父类的构造函数。
+				第二种情况，super作为对象时，指向父类的原型对象。
+			*/
+
+			//Coder类
+			class Coder extends Person {
+				constructor(userName,money){
+					//如果子类中有constructor，并且拥有自己的属性，必须调用super方法
+					/*
+						另一个需要注意的地方是，在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错。这是因为子类实例的构建，是基于对父类实例加工，只有super方法才能返回父类实例
+					*/
+					//必须先调用父类
+					super(userName);
+
+					this.money = money;
+				};
+
+				coder(){
+					console.log( super.abc );//super作为对象时，指向父类的原型对象。函数的原型对象上只有run和say两个属性。而如果想调用函数的静态方法，则需要使用原函数person来调用。
+					console.log( Person.abc )//要想调用函数的静态方法，则需要使用原函数来调用。
+				}
+			}
+
+			var c = new Coder("leo",1000);
+
+			console.log( c );
+
+			c.coder();
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

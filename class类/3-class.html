@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				ecmascript6 的 class
+
+				只能在chrome和火狐下测试
+
+				用class还要兼容低版本（需要编译）
+
+				语法糖
+					把之前语法包装一层，让开发者用着更爽
+
+				一类实例共享的属性和方法，es5.1中是写在prototype上
+				es6中直接写在类中
+			*/
+			//类
+			class Person {
+				//内置的函数，当用这个类创造实例的时候，会自动调用这个函数
+				constructor(userName){
+					console.log("123");
+					this.userName = userName;
+				}
+
+				//这些方法是所有实例共享的
+				run(){
+					console.log( this.userName+"我会奔跑" );
+				};
+				say(){
+
+				};
+
+			}
+
+			//实例
+			var p1 = new Person("leo");
+			var p2 = new Person("leo");
+
+
+
+			console.log(  p1.run === p2.run );
+
+			/*//可以去除前后空格
+			function abc(str){
+				return str.trim();	
+			}
+
+			t();*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				ecmascript6 的 class
+
+				只能在chrome和火狐下测试
+
+				用class还要兼容低版本（需要编译）
+
+				语法糖
+					把之前语法包装一层，让开发者用着更爽
+			*/
+			//类
+			class Person {
+				//内置的函数，当用这个类创造实例的时候，会自动调用这个函数
+				constructor(userName){
+					this.userName = userName;
+					console.log(userName);
+				}
+			}
+
+			console.log( Person );
+
+
+			//实例
+			var p = new Person("leo");
+
+			//console.log( p.constructor === Person );
+
+			/*function Car(color){
+				this.color = color;
+			}*/
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
