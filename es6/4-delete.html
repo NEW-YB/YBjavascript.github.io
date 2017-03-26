@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				正常模式
+				严格模式
+			*/
+			"use strict"
+
+			//delete删除全局变量会报错
+
+			var abc = 10;
+
+			// delete abc;   //不能删除全局变量
+
+			console.log( abc );
+
+			var obj = {
+				a:10,
+				arr:[1,2,3]
+			}
+
+			//删除对象上的属性
+
+			delete obj.arr;  //删除对象上的属性
+
+			console.log( obj );
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
