@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				Object.getPrototypeOf(object)
+					用来获取一个对象的prototype对象
+			*/
+
+			/*var obj = {a:1}
+
+			console.log( Object.getPrototypeOf(obj) === Object.prototype );
+
+			Object.setPrototypeOf(obj,{say:function (){
+					
+			}})
+不能改变原Object原始函数上的，只有自己定义的才可以更改。
+			console.log( Object.prototype );*/
+
+
+			function Person(){
+				
+			}
+
+			Person.prototype.say = function (){
+					
+			}
+
+			//Person.prototype = {}
+
+			var p = new Person();
+
+			//console.log( Object.getPrototypeOf(p) );
+
+			Object.setPrototypeOf(p,{speaK:function (){
+					
+			}});
+
+			console.log( Object.getPrototypeOf(p) );
+			
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
