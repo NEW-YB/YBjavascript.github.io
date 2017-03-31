@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./vue.js"></script>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<h1>学员信息</h1>
+		<input id="addInfo" />
+
+		<div id="box">
+			<h1> {{ message }} </h1>
+		</div>
+		<script>
+			//DOM作为模板
+
+			//数据
+			var obj = {
+				message:"hello,Vue!"
+			}
+
+			//根实例  VM
+			new Vue({   //选项参数
+				el:"#box",
+				data:obj
+			});
+
+		</script>
+	</body>
+</html>
